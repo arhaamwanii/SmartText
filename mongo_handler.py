@@ -5,17 +5,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-mongo_uri=your_mongo_connection_uri
-mongo_database=your_database_name
-
-
 # Load environment variables
-mongo_uri = os.getenv("mongo_uri")
+mongo_uri = os.getenv("MONGO_URI")
+mongo_database = os.getenv("MONGO_DATABASE")
 
 # Initialize MongoDB client
 client = MongoClient(mongo_uri)
-db = client[os.getenv("mongo_database")]  # Load the database name from environment variables
-collection = db["tinymce_data"]  # Collection to store TinyMCE data
+db = client[mongo_database]
+collection = db["tinymce_data"]
 
 def store_data_in_mongo(content):
     # Store content in MongoDB
