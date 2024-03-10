@@ -1,11 +1,14 @@
-import React from 'react'
+import { Editor } from "@tinymce/tinymce-react";
 
-function TinyMce() {
+export default function TinyMce () {
   return (
-    <div>
-        
-    </div>
-  )
+    <Editor
+      initialValue="<p>This is some initial content</p>"
+      init={{
+        //  Add your TinyMCE configurations here
+        plugins: ["text", "link"],
+        toolbar: "undo redo | bold italic | link",
+      }}
+    />
+  );
 }
-
-export default TinyMce
