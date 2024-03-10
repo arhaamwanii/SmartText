@@ -1,4 +1,4 @@
 streamlit
 pymongo
 streamlit-auth0-component
-dotenv
+python-dotenv
